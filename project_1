@@ -1,0 +1,20 @@
+nandokatili@nandokatili-VirtualBox:~$ mkdir Departemen/{Marketing, Engineering,HR}/{Documents, Archives}
+nandokatili@nandokatili-VirtualBox:~$ mv marketing.pdf Departemen/Marketing/Documents
+nandokatili@nandokatili-VirtualBox:~$ mv engineering.pdf Departemen/Engineering/Documents
+nandokatili@nandokatili-VirtualBox:~$ mv hr.pdf Departemen/HR/Documents
+nandokatili@nandokatili-VirtualBox:~$ cd Departemen
+nandokatili@nandokatili-VirtualBox:~/Departemen$ cp Marketing/Documents/marketing.pdf Marketing/Archives
+nandokatili@nandokatili-VirtualBox:~/Departemen$ cp Engineering/Documents/engineering.pdf Engineering/Archives
+nandokatili@nandokatili-VirtualBox:~/Departemen$ cp HR/Documents/hr.pdf HR/Archives
+nandokatili@nandokatili-VirtualBox:~/Departemen$ sudo groupadd Marketing
+nandokatili@nandokatili-VirtualBox:~/Departemen$ sudo groupadd Engineering
+nandokatili@nandokatili-VirtualBox:~/Departemen$ sudo groupadd HR
+nandokatili@nandokatili-VirtualBox:~/Departemen$ sudo chown -R :Marketing Marketing
+nandokatili@nandokatili-VirtualBox:~/Departemen$ sudo chown -R :Engineering Engineering
+nandokatili@nandokatili-VirtualBox:~/Departemen$ sudo chown -R :HR HR
+nandokatili@nandokatili-VirtualBox:~/Departemen$ sudo chmod -R 770 Marketing
+nandokatili@nandokatili-VirtualBox:~/Departemen$ sudo chmod -R 770 Engineering
+nandokatili@nandokatili-VirtualBox:~/Departemen$ sudo chmod -R 770 HR
+nandokatili@nandokatili-VirtualBox:~/Departemen$ ls -l
+nandokatili@nandokatili-VirtualBox:~/Departemen$ find -name "*.pdf" -mtime -7
+nandokatili@nandokatili-VirtualBox:~/Departemen$ find -name "*.pdf" -mtime -7 > daftar_file_pdfminggulalu.txt
