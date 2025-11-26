@@ -5,10 +5,10 @@ nandokatili@nandokatili-VirtualBox:~/project_2$ mkdir source_file backup logs
 #Menampilkan
 nandokatili@nandokatili-VirtualBox:~/project_2$ ls
 
-#Membuat File Menggunakan Perulangan
+#Membuat File Menggunakan Echo
 nandokatili@nandokatili-VirtualBox:~/project_2$ cd source_file
-nandokatili@nandokatili-VirtualBox:~/project_2/source_file$ for i in {1..2}; do echo "laporan harian ke-$i" > laporan$i.txt; done
-nandokatili@nandokatili-VirtualBox:~/project_2/source_file$ for i in {1..2}; do echo "catatan evaluasi minggu ke-$i" > file$i.pdf; done
+nandokatili@nandokatili-VirtualBox:~/project_2/source_file$ echo "engineering" > engineering.txt
+nandokatili@nandokatili-VirtualBox:~/project_2/source_file$ echo "marketing" > marketing.pdf
 nandokatili@nandokatili-VirtualBox:~/project_2/source_file$ ls
 nandokatili@nandokatili-VirtualBox:~/project_2/source_file$ cd ..
 
@@ -30,7 +30,7 @@ BACKUP_NAME="backup_$TIMESTAMP.tar.gz"
 
 echo "Backup dijalankan pada $TIMESTAMP" >> $LOG_FILE
 
-
+#1.Cari File Berdasarkan Ekstensi & Tanggal Modifikasi
 FILES=$(find "$SOURCE_DIR" -name "*.txt" -o -name "*.pdf" -mtime -1)
 
 if [ -z "$FILES" ]; then
@@ -39,16 +39,16 @@ if [ -z "$FILES" ]; then
     exit 1
 fi
 
-
+#2.Kompres File
 tar -czf "$BACKUP_DIR/$BACKUP_NAME" $FILES 2>> $LOG_FILE
 
-
+#3.Memindahkan File Hasil Kompres ke Folder Khusus
 echo "File berhasil dikompres ke folder $BACKUP_DIR." >> "$LOG_FILE"
 
-
+#4.Mencatat Aktifitas ke Log
 echo "$(date) BERHASIL : Backup tersimpan sebagai $BACKUP_DIR/$BACKUP_NAME" >> "$LOG_FILE"
 
-
+#Mengecek Apakah Proses Backup Berhasil Apa Tidak
 echo "Backup berhasil!"
 echo "file backup: $BACKUP_NAME"
 echo "Lokasi penyimpanan: $BACKUP_DIR/"
