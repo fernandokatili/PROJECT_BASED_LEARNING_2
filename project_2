@@ -12,7 +12,7 @@ nandokatili@nandokatili-VirtualBox:~/project_2/source_file$ echo "marketing" > m
 nandokatili@nandokatili-VirtualBox:~/project_2/source_file$ ls
 nandokatili@nandokatili-VirtualBox:~/project_2/source_file$ cd ..
 
-#Masuk ke Dalam Nano
+#Buat Script Di Nano
 nandokatili@nandokatili-VirtualBox:~/project_2$ nano backup.sh
 
 
